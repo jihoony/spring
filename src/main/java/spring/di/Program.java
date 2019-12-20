@@ -3,7 +3,11 @@ package spring.di;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.di.entity.Exam;
+import spring.di.entity.NewlecExam;
 import spring.di.ui.ExamConsole;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Program {
 
@@ -16,5 +20,11 @@ public class Program {
 
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
+
+		List<Exam> exams = new ArrayList<Exam>();
+		exams.add(new NewlecExam(1,1,1,1));
+
+		for (Exam e : exams)
+			System.out.println(e.toString());
     }
 }
