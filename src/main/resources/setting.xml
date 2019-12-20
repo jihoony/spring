@@ -2,14 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- reference-->
     <!-- https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html-->
 
     <!-- xml namespace with p-->
     <!-- https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/beans.html#beans-p-namespace-->
+
+    <!-- xml namespace with util -->
+    <!-- https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html#xsd-config-body-schemas-util -->
 
     <!-- bean definitions here -->
 
@@ -23,15 +28,22 @@
         <property name="exam" ref="exam"></property><!-- 참조타입인 경우 ref를 사용하고 값 타입인 경우 value를 사용한다.-->
     </bean>
 
-    <bean id="exams" class="java.util.ArrayList">
-        <!-- exams.add(new NewlecExam(1,1,1,1)); -->
-        <constructor-arg>
-            <list>
-                <bean class="spring.di.entity.NewlecExam" p:kor="20" p:eng="30" p:math="20"/>
-                <ref bean="exam"/>
-            </list>
-        </constructor-arg>
-    </bean>
+
+    <!--    <util:list id="exams">-->
+    <util:list id="exams" list-class="java.util.ArrayList">
+        <bean class="spring.di.entity.NewlecExam" p:kor="20" p:eng="30" p:math="20"/>
+        <ref bean="exam"/>
+    </util:list>
+
+<!--    <bean id="exams" class="java.util.ArrayList">-->
+<!--        &lt;!&ndash; exams.add(new NewlecExam(1,1,1,1)); &ndash;&gt;-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <bean class="spring.di.entity.NewlecExam" p:kor="20" p:eng="30" p:math="20"/>-->
+<!--                <ref bean="exam"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
 
 
 
