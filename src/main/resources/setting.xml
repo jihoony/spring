@@ -24,7 +24,13 @@
     </bean>
 
     <bean id="exams" class="java.util.ArrayList">
-
+        <!-- exams.add(new NewlecExam(1,1,1,1)); -->
+        <constructor-arg>
+            <list>
+                <bean class="spring.di.entity.NewlecExam" p:kor="20" p:eng="30" p:math="20"/>
+                <ref bean="exam"/>
+            </list>
+        </constructor-arg>
     </bean>
 
 
