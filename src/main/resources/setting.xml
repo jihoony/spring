@@ -11,12 +11,30 @@
 
     <!--    Exam exam = new NewlecExam();-->
     <bean id="exam" class="spring.di.entity.NewlecExam">
-        <property name="kor">
-            <value>10</value>
-        </property>
-        <property name="eng" value="20"/>
-        <property name="math" value="30"/>
-        <property name="com" value="40"/>
+        <!-- 1번째 방법: 생성자 파라미터 순서대로 사용 -->
+<!--        <constructor-arg value="10"/>-->
+<!--        <constructor-arg value="20"/>-->
+<!--        <constructor-arg value="30"/>-->
+<!--        <constructor-arg value="40"/>-->
+
+        <!-- 2번째 방법: index를 사용 -->
+<!--        <constructor-arg index="0" value="10"/>-->
+<!--        <constructor-arg index="2" value="20"/>-->
+<!--        <constructor-arg index="3" value="30"/>-->
+<!--        <constructor-arg index="1" value="40"/>-->
+
+        <!-- 3번째 방법: 명시적인 name을 주어서 사용 -->
+        <constructor-arg name="kor" value="10"/>
+        <constructor-arg name="eng" value="20"/>
+        <constructor-arg name="math" value="30"/>
+        <constructor-arg name="com" value="40"/>
+
+        <!-- 4번째 방법: 명시적인 name과 데이터 타입을 주어서 사용 -->
+<!--        <constructor-arg name="kor" type="int" value="10"/>-->
+<!--        <constructor-arg name="eng" type="int" value="20"/>-->
+<!--        <constructor-arg name="math" type="int" value="30"/>-->
+<!--        <constructor-arg name="com" type="int" value="40"/>-->
+
     </bean>
 
     <!--    ExamConsole console = new GridExamConsole(); // Dependency Injection-->
