@@ -23,6 +23,10 @@
         <property name="exam" ref="exam"></property><!-- 참조타입인 경우 ref를 사용하고 값 타입인 경우 value를 사용한다.-->
     </bean>
 
+    <bean id="exams" class="java.util.ArrayList">
+
+    </bean>
+
 
 
 </beans>

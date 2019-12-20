@@ -6,7 +6,6 @@ import spring.di.entity.Exam;
 import spring.di.entity.NewlecExam;
 import spring.di.ui.ExamConsole;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Program {
@@ -21,7 +20,7 @@ public class Program {
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
 
-		List<Exam> exams = new ArrayList<Exam>();
+		List<Exam> exams = (List<Exam>) context.getBean("exams");
 		exams.add(new NewlecExam(1,1,1,1));
 
 		for (Exam e : exams)
