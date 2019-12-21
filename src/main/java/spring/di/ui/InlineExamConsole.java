@@ -6,10 +6,13 @@ import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
 
+    @Autowired
+    @Qualifier("exam1")
     private Exam exam;
 
     public InlineExamConsole() {
     }
+
 
     public InlineExamConsole(Exam exam) {
         this.exam = exam;
@@ -21,8 +24,6 @@ public class InlineExamConsole implements ExamConsole {
     }
 
     @Override
-    @Autowired
-    @Qualifier("exam1")
     public void setExam(Exam exam) {
         this.exam = exam;
     }
