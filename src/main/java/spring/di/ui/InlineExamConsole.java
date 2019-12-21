@@ -6,18 +6,17 @@ import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
 
-    @Autowired
-    @Qualifier("exam1")
     private Exam exam;
 
-//    public InlineExamConsole() {
-//        System.out.println("constructor");
-//    }
+    public InlineExamConsole() {
+        System.out.println("constructor");
+    }
 
-//    public InlineExamConsole(Exam exam) {
-//        System.out.println("overload constructor");
-//        this.exam = exam;
-//    }
+    @Autowired
+    public InlineExamConsole(@Qualifier("exam1")Exam exam, @Qualifier("exam2")Exam exam2) {
+        System.out.println("overload constructor");
+        this.exam = exam;
+    }
 
     @Override
     public void print() {
