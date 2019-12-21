@@ -14,10 +14,10 @@ public class InlineExamConsole implements ExamConsole {
 //        System.out.println("constructor");
 //    }
 
-    public InlineExamConsole(Exam exam) {
-        System.out.println("overload constructor");
-        this.exam = exam;
-    }
+//    public InlineExamConsole(Exam exam) {
+//        System.out.println("overload constructor");
+//        this.exam = exam;
+//    }
 
     @Override
     public void print() {
