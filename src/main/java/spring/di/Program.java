@@ -14,8 +14,8 @@ public class Program {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("setting.xml");
 
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam.toString());
+//		Exam exam = context.getBean(Exam.class);
+//		System.out.println(exam.toString());
 
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
