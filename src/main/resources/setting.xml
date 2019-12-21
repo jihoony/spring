@@ -3,9 +3,12 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+">
 
     <!-- reference-->
     <!-- https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html-->
@@ -16,8 +19,12 @@
     <!-- xml namespace with util -->
     <!-- https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html#xsd-config-body-schemas-util -->
 
+    <!-- xml namespace with context -->
+    <!-- https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/xsd-config.html -->
+
     <!-- bean definitions here -->
 
+    <context:annotation-config/>
     <!--    Exam exam = new NewlecExam();-->
     <bean id="exam" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" p:math="20"/>
 
@@ -25,7 +32,7 @@
 <!--    <bean id="console" class="spring.di.ui.GridExamConsole">-->
     <bean id="console" class="spring.di.ui.InlineExamConsole">
         <!--    console.setExam(exam);-->
-        <property name="exam" ref="exam"></property><!-- 참조타입인 경우 ref를 사용하고 값 타입인 경우 value를 사용한다.-->
+<!--        <property name="exam" ref="exam"></property>&lt;!&ndash; 참조타입인 경우 ref를 사용하고 값 타입인 경우 value를 사용한다.&ndash;&gt;-->
     </bean>
 
 
