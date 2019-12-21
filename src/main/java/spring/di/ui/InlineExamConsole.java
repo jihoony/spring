@@ -24,6 +24,7 @@ public class InlineExamConsole implements ExamConsole {
 
     @Override
     public void print() {
+
         if (exam == null)
             System.out.format("total is %d, avg is %f\n", 0, 0.0);
         else
