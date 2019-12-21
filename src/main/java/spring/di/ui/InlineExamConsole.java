@@ -6,21 +6,26 @@ import spring.di.entity.Exam;
 
 public class InlineExamConsole implements ExamConsole {
 
+    @Autowired(required = false)
+    @Qualifier("exam2")
     private Exam exam;
 
     public InlineExamConsole() {
         System.out.println("constructor");
     }
 
-    @Autowired
-    public InlineExamConsole(@Qualifier("exam1")Exam exam, @Qualifier("exam2")Exam exam2) {
+
+    public InlineExamConsole(Exam exam) {
         System.out.println("overload constructor");
         this.exam = exam;
     }
 
     @Override
     public void print() {
-        System.out.format("total is %d, avg is %f\n", exam.total(), exam.avg());
+        if (exam == null)
+            System.out.format("total is %d, avg is %f\n", 0, 0.0);
+        else
+            System.out.format("total is %d, avg is %f\n", exam.total(), exam.avg());
     }
 
     @Override
