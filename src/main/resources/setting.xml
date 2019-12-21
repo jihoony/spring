@@ -25,7 +25,7 @@
     <!-- bean definitions here -->
 
 <!--    <context:annotation-config/>-->
-    <context:component-scan base-package="spring.di.ui"/>
+    <context:component-scan base-package="spring.di.ui, spring.di.entity"/>
 
     <!--    Exam exam = new NewlecExam();-->
 <!--    <bean id="exam1" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="10" p:math="20"/>-->
