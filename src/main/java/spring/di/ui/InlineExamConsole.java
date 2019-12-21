@@ -10,11 +10,12 @@ public class InlineExamConsole implements ExamConsole {
     @Qualifier("exam1")
     private Exam exam;
 
-    public InlineExamConsole() {
-    }
-
+//    public InlineExamConsole() {
+//        System.out.println("constructor");
+//    }
 
     public InlineExamConsole(Exam exam) {
+        System.out.println("overload constructor");
         this.exam = exam;
     }
 
@@ -25,6 +26,7 @@ public class InlineExamConsole implements ExamConsole {
 
     @Override
     public void setExam(Exam exam) {
+        System.out.println("setter");
         this.exam = exam;
     }
 }
