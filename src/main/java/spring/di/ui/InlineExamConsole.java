@@ -9,7 +9,7 @@ import spring.di.entity.Exam;
 public class InlineExamConsole implements ExamConsole {
 
     @Autowired
-    @Qualifier("exam2")
+//    @Qualifier("exam2")
     private Exam exam;
 
     public InlineExamConsole() {
